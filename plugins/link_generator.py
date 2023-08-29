@@ -55,6 +55,7 @@ async def link_generator(client: Client, message: Message):
             continue
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
-    link = f"https://telegram.me/{client.username}?start={base64_string}"
+    link = f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
+    url=await get_shortlink(f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
     await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
