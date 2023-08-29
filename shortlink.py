@@ -1,12 +1,12 @@
 import os
 import asyncio
-from os import getenv, environ
+from os import environ.get
 from asyncio import TimeoutError
 from shortzy import Shortzy
 from Config.py import config.py
 
-SHORTENER_API = str(getenv('SHORTENER_API', 'e0867ce24e2238645541bf7651be2217b4cd5dd1'))
-SHORTENER_WEBSITE = str(getenv('SHORTENER_WEBSITE', 'shorturllink.in'))
+SHORTENER_API = os.environ.get('SHORTENER_API', 'e0867ce24e2238645541bf7651be2217b4cd5dd1'))
+SHORTENER_WEBSITE = os.environ.get('SHORTENER_WEBSITE', 'shorturllink.in'))
 
 
 shortzy = Shortzy(SHORTENER_API, SHORTENER_WEBSITE)
