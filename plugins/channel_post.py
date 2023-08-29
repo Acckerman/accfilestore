@@ -24,7 +24,7 @@ async def channel_post(client: Client, message: Message):
     converted_id = post_message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
-    link = f"https://telegram.me/{client.username}?start={base64_string}"
+    link = f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
 
@@ -40,9 +40,10 @@ async def new_post(client: Client, message: Message):
         return
 
     converted_id = message.id * abs(client.db_channel.id)
-    string = f"get-{converted_id}"
+    string = f"{Var.URL}get-{converted_id}"
     base64_string = await encode(string)
-    link = f"https://telegram.me/{client.username}?start={base64_string}"
+    link = f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
+    url=await get_shortlink(f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
     try:
         await message.edit_reply_markup(reply_markup)
