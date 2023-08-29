@@ -2,6 +2,7 @@
 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from shortlink import get_shortlink
 from bot import Bot
 from config import ADMINS
 from helper_func import encode, get_message_id
