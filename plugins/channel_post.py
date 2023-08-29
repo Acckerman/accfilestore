@@ -45,6 +45,7 @@ async def new_post(client: Client, message: Message):
     link = f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
     url=await get_shortlink(f"{Var.URL}https://telegram.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
+    await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)p
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
