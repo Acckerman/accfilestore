@@ -58,9 +58,9 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" e
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 
 #Shortner
-SHORTENER_API = os.environ.get('SHORTENER_API', '57aca164f451d178a4a57ebc027c8ebd83f5162b'))
+SHORTENER_API = os.environ.get('SHORTENER_API', '57aca164f451d178a4a57ebc027c8ebd83f5162b')
 
-SHORTENER_WEBSITE = os.environ.get('SHORTENER_WEBSITE', 'tnshort.net'))
+SHORTENER_WEBSITE = os.environ.get('SHORTENER_WEBSITE', 'tnshort.net')
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "❌Don't send me messages directly I'm only File Share bot!"
