@@ -24,7 +24,7 @@ async def get_shortlink(link):
 
 async def get_shortlink_sub(link):
     url = f'https://{SHORTENER_WEBSITE}/api'
-    params = {'api': SHORTENER_API, '{link}': link}
+    params = {'api': SHORTENER_API, 'Url': link}
     scraper = cloudscraper.create_scraper() 
     r = scraper.get(url, params=params)
     return r.json()["shortenedUrl"]
